@@ -104,17 +104,17 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
         RECOGNISED: [
           {
             target: "whois",
-            cond: ((context) => getNLUResult(context) === "want_person") && ((context) => thresholdCheck(context) === true),
+            cond: ((context) => getNLUResult(context) === "want_person" && thresholdCheck(context) === true),
             actions: assign({timeout_count: 0}),
           },
           {
             target: "welcome",
-            cond: ((context) => getNLUResult(context) === "want_meeting") && ((context) => thresholdCheck(context) === true),
+            cond: ((context) => getNLUResult(context) === "want_person" && thresholdCheck(context) === true),
             actions: assign({timeout_count: 0}),
           },
           {
             target: ".notsure", 
-            cond: ((context) => getNLUResult(context) === "want_person") && ((context) => thresholdCheck(context) === false),
+            cond: ((context) => getNLUResult(context) === "want_person" && thresholdCheck(context) === false),
             actions: [
               assign({timeout_count: 0}),
               assign({last_state: "want_person"}),
@@ -122,7 +122,7 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
           },
           {
             target: ".notsure", 
-            cond: ((context) => getNLUResult(context) === "want_meeting") && ((context) => thresholdCheck(context) === false),
+            cond: ((context) => getNLUResult(context) === "want_meeting" && thresholdCheck(context) === false),
             actions: [
               assign({timeout_count: 0}),
               assign({last_state: "want_meeting"}),
@@ -130,17 +130,17 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
           },
           {
             target: "whois",
-            cond: ((context) => getNLUResult(context) === "affirm") && ((context) => context.last_state === "want_person"),
+            cond: ((context) => getNLUResult(context) === "affirm" &&  context.last_state === "want_person"),
             actions: assign({timeout_count: 0}),
           },
           {
             target: "welcome",
-            cond: ((context) => getNLUResult(context) === "affirm") && ((context) => context.last_state === "want_meeting"),
+            cond: ((context) => getNLUResult(context) === "affirm" &&  context.last_state === "want_meeting"),
             actions: assign({timeout_count: 0}),
           },
           {
             target: ".help",
-            cond: ((context) => getNLUResult(context) === "help") || ((context) => getNLUResult(context) === "reject"),
+            cond: ((context) => getNLUResult(context) === "help" || getNLUResult(context) === "reject"),
             actions: assign({timeout_count: 0}),
           },
           {
@@ -203,12 +203,12 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
         RECOGNISED: [
           {
             target: ".help",
-            cond: ((context) => getNLUResult(context) === "help") || ((context) => getNLUResult(context) === "reject"),
+            cond: ((context) => getNLUResult(context) === "help" || getNLUResult(context) === "reject"),
             actions: assign({timeout_count: 0}),
           },
           {
             target: "whotheyare",
-            cond: ((context) => isWho(context)) && ((context) => thresholdCheck(context) === true),
+            cond: ((context) => isWho(context) && thresholdCheck(context) === true),
             actions: [
               assign({person: (context) => getName(context)}),
               assign({timeout_count: 0}),
@@ -216,7 +216,7 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
           },
           {
             target: ".notsure", 
-            cond: ((context) => isWho(context)) && ((context) => thresholdCheck(context) === false),
+            cond: ((context) => isWho(context) && thresholdCheck(context) === false),
             actions: [
               assign({timeout_count: 0}),
               assign({last_state: "whois"}),
@@ -224,7 +224,7 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
           },
           {
             target: "whotheyare",
-            cond: ((context) => getNLUResult(context) === "affirm") && ((context) => context.last_state === "whois"),
+            cond: ((context) => getNLUResult(context) === "affirm" && context.last_state === "whois"),
             actions: [
               assign({timeout_count: 0}),
               assign({person: (context) => getName(context)}),
@@ -439,12 +439,12 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
         RECOGNISED: [
           {
             target: ".help",
-            cond: ((context) => getNLUResult(context) === "help") || ((context) => getNLUResult(context) === "reject"),
+            cond: ((context) => getNLUResult(context) === "help" || getNLUResult(context) === "reject"),
             actions: assign({timeout_count: 0}),
           },
           {
             target: "duration",
-            cond: ((context) => getNLUResult(context) === "day") && ((context) => thresholdCheck(context) === true),
+            cond: ((context) => getNLUResult(context) === "day" && thresholdCheck(context) === true),
             actions: [
               assign({day: (context) => formatDay(context)}),
               assign({timeout_count: 0}),
@@ -452,7 +452,7 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
           },
           {
             target: ".notsure", 
-            cond: ((context) => getNLUResult(context) === "day") && ((context) => thresholdCheck(context) === false),
+            cond: ((context) => getNLUResult(context) === "day" && thresholdCheck(context) === false),
             actions: [
               assign({timeout_count: 0}),
               assign({last_state: "day"}),
@@ -460,7 +460,7 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
           },
           {
             target: "duration",
-            cond: ((context) => getNLUResult(context) === "affirm") && ((context) => context.last_state === "day"),
+            cond: ((context) => getNLUResult(context) === "affirm" && context.last_state === "day"),
             actions: [
               assign({timeout_count: 0}),
               assign({day: (context) => formatDay(context)}),
@@ -592,12 +592,12 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
           },
           {
             target: ".help",
-            cond: ((context) => getNLUResult(context) === "help") || ((context) => getNLUResult(context) === "reject"),
+            cond: ((context) => getNLUResult(context) === "help" || getNLUResult(context) === "reject"),
             actions: assign({timeout_count: 0}),
           },
           {
             target: "confirmation_time",
-            cond: ((context) => getNLUResult(context) === "time") && ((context) => thresholdCheck(context) === true),
+            cond: ((context) => getNLUResult(context) === "time" && thresholdCheck(context) === true),
             actions: [
               assign({time: (context) => formatTime(context)}),
               assign({timeout_count: 0}),
@@ -605,7 +605,7 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
           },
           {
             target: ".notsure", 
-            cond: ((context) => getNLUResult(context) === "time") && ((context) => thresholdCheck(context) === false),
+            cond: ((context) => getNLUResult(context) === "time" && thresholdCheck(context) === false),
             actions: [
               assign({timeout_count: 0}),
               assign({last_state: "time"}),
@@ -613,7 +613,7 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
           },
           {
             target: "confirmation_time",
-            cond: ((context) => getNLUResult(context) === "affirm") && ((context) => context.last_state === "time"),
+            cond: ((context) => getNLUResult(context) === "affirm" && context.last_state === "time"),
             actions: [
               assign({timeout_count: 0}),
               assign({time: (context) => formatTime(context)}),
