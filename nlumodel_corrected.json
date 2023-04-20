@@ -1,0 +1,675 @@
+{
+    "projectFileVersion": "2022-10-01-preview",
+    "stringIndexType": "Utf16CodeUnit",
+    "metadata": {
+        "projectKind": "Conversation",
+        "settings": {
+            "confidenceThreshold": 0
+        },
+        "projectName": "Lab_4_NLU",
+        "multilingual": false,
+        "description": "",
+        "language": "en-us"
+    },
+    "assets": {
+        "projectKind": "Conversation",
+        "intents": [
+            {
+                "category": "None"
+            },
+            {
+                "category": "want_meeting"
+            },
+            {
+                "category": "want_person"
+            },
+            {
+                "category": "affirm"
+            },
+            {
+                "category": "reject"
+            },
+            {
+                "category": "time"
+            },
+            {
+                "category": "help"
+            }
+        ],
+        "entities": [
+            {
+                "category": "day",
+                "compositionSetting": "combineComponents",
+                "regex": {
+                    "expressions": [
+                        {
+                            "regexKey": "Sunday",
+                            "language": "en-us",
+                            "regexPattern": "[Ss]unday"
+                        },
+                        {
+                            "regexKey": "Saturday",
+                            "language": "en-us",
+                            "regexPattern": "[Ss]aturday"
+                        },
+                        {
+                            "regexKey": "Friday",
+                            "language": "en-us",
+                            "regexPattern": "[Ff]riday"
+                        },
+                        {
+                            "regexKey": "Thursday",
+                            "language": "en-us",
+                            "regexPattern": "[Tt]hursday"
+                        },
+                        {
+                            "regexKey": "Wednesday",
+                            "language": "en-us",
+                            "regexPattern": "[Ww]ednesday"
+                        },
+                        {
+                            "regexKey": "Tuesday",
+                            "language": "en-us",
+                            "regexPattern": "[Tt]uesday"
+                        },
+                        {
+                            "regexKey": "Monday",
+                            "language": "en-us",
+                            "regexPattern": "[Mm]onday"
+                        }
+                    ]
+                }
+            }
+        ],
+        "utterances": [
+            {
+                "text": "please repeat what you said",
+                "language": "en-us",
+                "intent": "help",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "repeat what you said",
+                "language": "en-us",
+                "intent": "help",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "please repeat ",
+                "language": "en-us",
+                "intent": "help",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "can you repeat",
+                "language": "en-us",
+                "intent": "help",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "repeat ",
+                "language": "en-us",
+                "intent": "help",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "can you help me please",
+                "language": "en-us",
+                "intent": "help",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "say it again please",
+                "language": "en-us",
+                "intent": "help",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "say it again ",
+                "language": "en-us",
+                "intent": "help",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "can you say it again",
+                "language": "en-us",
+                "intent": "help",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "help me ",
+                "language": "en-us",
+                "intent": "help",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "help",
+                "language": "en-us",
+                "intent": "help",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "let it start at",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "at midnight",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "at time",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "at hour ",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "around twelve",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "around eleven ",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "around ten ",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "around nine ",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "around eight ",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "around seven ",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "around six ",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "around five",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "around four",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "around three",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "around two",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "around one",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "at four o'clock",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "at five o'clock",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "at six o'clock",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "at seven o'clock",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "at eight o'clock",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "at one",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "at two ",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "at three",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "at four",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "at five",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "at six",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "at seven",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "at eight",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "at nine",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "at ten",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "at eleven",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "at twelve ",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "at noon",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "let it be at",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "around",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "at ",
+                "language": "en-us",
+                "intent": "time",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "yes please ",
+                "language": "en-us",
+                "intent": "affirm",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "no thanks ",
+                "language": "en-us",
+                "intent": "reject",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "no thank you ",
+                "language": "en-us",
+                "intent": "reject",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "never ",
+                "language": "en-us",
+                "intent": "reject",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "no way ",
+                "language": "en-us",
+                "intent": "reject",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "not ",
+                "language": "en-us",
+                "intent": "reject",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "not really",
+                "language": "en-us",
+                "intent": "reject",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "nope",
+                "language": "en-us",
+                "intent": "reject",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "no",
+                "language": "en-us",
+                "intent": "reject",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "yes of course",
+                "language": "en-us",
+                "intent": "affirm",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "absolutely",
+                "language": "en-us",
+                "intent": "affirm",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "yep",
+                "language": "en-us",
+                "intent": "affirm",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "of course",
+                "language": "en-us",
+                "intent": "affirm",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "sure",
+                "language": "en-us",
+                "intent": "affirm",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "yeah",
+                "language": "en-us",
+                "intent": "affirm",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "yes",
+                "language": "en-us",
+                "intent": "affirm",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "find out who someone is ",
+                "language": "en-us",
+                "intent": "want_person",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I want to know who someone is ",
+                "language": "en-us",
+                "intent": "want_person",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "find out about someone ",
+                "language": "en-us",
+                "intent": "want_person",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "find out who somebody is ",
+                "language": "en-us",
+                "intent": "want_person",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I want to find out who somebody is ",
+                "language": "en-us",
+                "intent": "want_person",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "get to know someone ",
+                "language": "en-us",
+                "intent": "want_person",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I want to get to know somebody ",
+                "language": "en-us",
+                "intent": "want_person",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I want to schedule a meeting ",
+                "language": "en-us",
+                "intent": "want_meeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I want to create a meeting ",
+                "language": "en-us",
+                "intent": "want_meeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "create a new meeting ",
+                "language": "en-us",
+                "intent": "want_meeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "set up a meeting ",
+                "language": "en-us",
+                "intent": "want_meeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "make an appointment",
+                "language": "en-us",
+                "intent": "want_meeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "create an appointment ",
+                "language": "en-us",
+                "intent": "want_meeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "I want to schedule something ",
+                "language": "en-us",
+                "intent": "want_meeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "schedule something ",
+                "language": "en-us",
+                "intent": "want_meeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "create a meeting ",
+                "language": "en-us",
+                "intent": "want_meeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "add a meeting to my agenda",
+                "language": "en-us",
+                "intent": "want_meeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "make a meeting ",
+                "language": "en-us",
+                "intent": "want_meeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "set up an appointment ",
+                "language": "en-us",
+                "intent": "want_meeting",
+                "entities": [],
+                "dataset": "Train"
+            },
+            {
+                "text": "make an event ",
+                "language": "en-us",
+                "intent": "want_meeting",
+                "entities": [],
+                "dataset": "Train"
+            }
+        ]
+    }
+}
