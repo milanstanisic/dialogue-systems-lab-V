@@ -55,7 +55,7 @@ const formatTitle = (context: SDSContext) => {
   //matching a regular expression and returning the name of the meeting's name.
   regex_match = u.match(/.*/);
   if (regex_match) {
-    return regex_match[0];
+    return "a meeting with ".concat(regex_match[0]);
   };
   return "this";
 };
@@ -227,7 +227,6 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
             cond: ((context) => getNLUResult(context) === "affirm" && context.last_state === "whois"),
             actions: [
               assign({timeout_count: 0}),
-              assign({person: (context) => getName(context)}),
             ],
           },
           {
@@ -320,7 +319,7 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
             target: "day_of_the_week",
             cond: (context) => getNLUResult(context) === 'affirm',
             actions: [
-              assign({title: (context) => formatTitle(`a meeting with ${context.person}`)}),
+              assign({title: (context) => formatTitle(context.person),
               assign({timeout_count: 0}),
             ],
           },
@@ -463,7 +462,6 @@ export const dmMachine: MachineConfig<SDSContext, any, SDSEvent> = {
             cond: ((context) => getNLUResult(context) === "affirm" && context.last_state === "day"),
             actions: [
               assign({timeout_count: 0}),
-              assign({day: (context) => formatDay(context)}),
             ],
           },
           {
